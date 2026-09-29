@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this research code, please cite this repository."
+type: software
+title: "Sycophancy and Safety via SAE: Research Code for Less Sycophancy, Stronger Refusal?"
+authors:
+  - family-names: Wang
+    given-names: Xu
+    affiliation: The University of Hong Kong
+  - family-names: Zou
+    given-names: Difan
+    affiliation: The University of Hong Kong
+  - family-names: Wu
+    given-names: Xuansheng
+    affiliation: Shanghai Artificial Intelligence Laboratory
+repository-code: "https://github.com/Xu0615/Sycophancy_Safety_via_SAE"
+url: "https://github.com/Xu0615/Sycophancy_Safety_via_SAE"
+abstract: >-
+  Research code for SAE feature discovery, inference steering,
+  compensatory feature injection during fine-tuning, and paired analysis
+  of direct refusal and refusal under user pressure in Qwen3.5 base models.
+keywords:
+  - mechanistic interpretability
+  - sparse autoencoders
+  - sycophancy
+  - AI safety
+  - activation steering
+  - compensatory feature injection

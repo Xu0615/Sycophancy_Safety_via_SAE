@@ -1,0 +1,8 @@
+# Lightweight analysis, plotting, and utility tests.
+# Dependency inventory; not the original experiment lockfile.
+numpy
+pandas
+pyarrow
+matplotlib
+PyYAML
+pytest

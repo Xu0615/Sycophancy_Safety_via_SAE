@@ -1,0 +1,40 @@
+# Local environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Generated experiment artifacts and local weights
+/models/
+/sae/
+/saes/
+/data/
+/datasets/
+/outputs/
+/logs/
+/checkpoints/
+/wandb/
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.parquet
+*.log
+
+# OS and editor files
+.DS_Store
+__MACOSX/
+.idea/
+.vscode/

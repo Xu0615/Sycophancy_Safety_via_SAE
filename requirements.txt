@@ -1,0 +1,12 @@
+-r requirements-analysis.txt
+
+# Feature extraction and training imports.
+# Select versions compatible with Qwen3.5 and your CUDA environment.
+torch
+transformers
+accelerate
+safetensors
+tqdm
+
+# Install vllm and deepspeed separately for the backends you use.
+# See docs/reproduction.md for environment and release requirements.

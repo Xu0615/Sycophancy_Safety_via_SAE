@@ -1,0 +1,25 @@
+# Illustrative configuration for src/step2_syco_feature.py.
+# Supply --model-path, --sae-dir, --layer, and --dataset-path on the CLI.
+# These are code defaults, not a recovered experimental configuration.
+model:
+  model_root: ./models
+  device_map: auto
+  torch_dtype: bfloat16
+
+output:
+  output_dir: outputs/step2
+
+feature_extraction:
+  assistant_token_limit: 128
+  pool_top_k: 5
+  per_pair_top_n: 50
+  top_output_k: 200
+  checkpoint_interval: 25
+  min_delta: 0.0
+  min_syc_score: 0.0
+
+# If your SAE checkpoint does not contain k, configure its actual top_k:
+# sae:
+#   configs:
+#     Qwen3.5-2B-Base:
+#       top_k: <value from the SAE training configuration>

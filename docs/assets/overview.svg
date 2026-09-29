@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="544" viewBox="0 0 1200 544" role="img" aria-labelledby="title desc">
+  <title id="title">Less Sycophancy, Stronger Refusal?</title>
+  <desc id="desc">A mechanistic interpretability study connecting SAE feature discovery, inference validation, training-time CFI, and paired safety evaluation.</desc>
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="1" fill="#163F46" opacity="0.08"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#17646B"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="544" rx="20" fill="#F5F5EF"/>
+  <path d="M730 0H1180Q1200 0 1200 20V360H730Z" fill="url(#grid)"/>
+  <rect x="48" y="42" width="36" height="4" rx="2" fill="#17646B"/>
+  <text x="100" y="49" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#17646B">MECHANISTIC INTERPRETABILITY / AI SAFETY</text>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="67" font-weight="700" letter-spacing="-2.7">
+    <text x="47" y="151" fill="#142F36">Less Sycophancy,</text>
+    <text x="47" y="227" fill="#17646B">Stronger Refusal?</text>
+  </g>
+  <text x="50" y="276" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#4B6468">One trait intervention. Two refusal settings.</text>
+  <text x="50" y="321" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700" letter-spacing="1.7" fill="#17646B">QWEN3.5 BASE MODELS</text>
+  <text x="272" y="321" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="#4B6468">2B / 9B / 35B-A3B</text>
+
+  <g stroke="#BCD0CB" stroke-width="1.5" fill="none">
+    <path d="M786 121L905 110M786 171L905 110M786 221L905 110M786 271L905 110"/>
+    <path d="M786 121L905 190M786 171L905 190M786 221L905 190M786 271L905 190"/>
+    <path d="M786 121L905 270M786 171L905 270M786 221L905 270M786 271L905 270"/>
+  </g>
+  <g fill="#F5F5EF" stroke="#8EAAA5" stroke-width="2">
+    <circle cx="786" cy="121" r="8"/><circle cx="786" cy="171" r="8"/>
+    <circle cx="786" cy="221" r="8"/><circle cx="786" cy="271" r="8"/>
+    <circle cx="905" cy="110" r="11"/><circle cx="905" cy="270" r="11"/>
+  </g>
+  <circle cx="905" cy="190" r="25" fill="#17646B" opacity="0.1"/>
+  <circle cx="905" cy="190" r="13" fill="#17646B"/>
+  <path d="M794 171L891 188" stroke="#17646B" stroke-width="2.5" fill="none"/>
+  <path d="M925 190H975V140H1000" stroke="#17646B" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <path d="M975 190V244H1000" stroke="#17646B" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+  <rect x="1006" y="111" width="146" height="59" rx="10" fill="#FFFFFF" stroke="#CAD7D1"/>
+  <rect x="1006" y="215" width="146" height="59" rx="10" fill="#FAEBE4" stroke="#E1B6A4"/>
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="1079" y="136" font-size="14" font-weight="700" fill="#173D43">DIRECT</text>
+    <text x="1079" y="155" font-size="12" fill="#4B6468">refusal</text>
+    <text x="1079" y="240" font-size="14" font-weight="700" fill="#87452E">PRESSURED</text>
+    <text x="1079" y="259" font-size="12" fill="#87452E">refusal</text>
+    <text x="905" y="318" font-size="12" font-weight="700" letter-spacing="1.3" fill="#17646B">SAE FEATURE</text>
+  </g>
+
+  <path d="M48 359H1152" stroke="#D8E0D8"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <rect x="48" y="389" width="258" height="111" rx="12" fill="#FFFFFF" stroke="#DCE3DC"/>
+    <rect x="330" y="389" width="258" height="111" rx="12" fill="#FFFFFF" stroke="#DCE3DC"/>
+    <rect x="612" y="389" width="258" height="111" rx="12" fill="#17646B"/>
+    <rect x="894" y="389" width="258" height="111" rx="12" fill="#FFFFFF" stroke="#DCE3DC"/>
+    <g font-size="11" font-weight="700" letter-spacing="1.6" fill="#647E79">
+      <text x="69" y="414">01 / DISCOVER</text>
+      <text x="351" y="414">02 / VALIDATE</text>
+      <text x="633" y="414" fill="#B5DBD5">03 / INTERVENE</text>
+      <text x="915" y="414">04 / EVALUATE</text>
+    </g>
+    <g font-size="20" font-weight="700" fill="#173D43">
+      <text x="69" y="447">Paired SAE features</text>
+      <text x="351" y="447">Inference steering</text>
+      <text x="633" y="447" fill="#FFFFFF">Training-time CFI</text>
+      <text x="915" y="447">Paired safety tests</text>
+    </g>
+    <g font-size="13" fill="#607770">
+      <text x="69" y="475">Locate the trait direction.</text>
+      <text x="351" y="475">Test behavioral influence.</text>
+      <text x="633" y="475" fill="#D0E6E1">Remove the hook after training.</text>
+      <text x="915" y="475">Measure refusal and quality.</text>
+    </g>
+  </g>
+</svg>
