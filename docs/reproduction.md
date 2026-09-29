@@ -1,6 +1,6 @@
 # Execution notes
 
-This source release separates model computation from lightweight analysis. The README summarizes the study; this page records what is needed to execute the code.
+Environment setup, data formats, and commands for running the research code.
 
 ## Environment
 
@@ -12,13 +12,13 @@ python -m pip install -r requirements.txt
 python -m pip install vllm deepspeed
 ```
 
-The dependency files are an inventory inferred from imports, not the original experiment's environment lock. Match PyTorch, CUDA, Transformers, vLLM, and DeepSpeed versions to the model and hardware. The source contains vLLM internal-API compatibility code, so backend upgrades need validation. GPU training and inference have not been validated as part of this repository packaging.
+The requirements files list dependencies without pinning the experiment environment. Select compatible PyTorch, CUDA, Transformers, vLLM, and DeepSpeed versions for your model and hardware. Generation uses vLLM internal APIs; verify compatibility when changing versions.
 
 Use the corresponding base checkpoints: [Qwen3.5-2B-Base](https://huggingface.co/Qwen/Qwen3.5-2B-Base), [Qwen3.5-9B-Base](https://huggingface.co/Qwen/Qwen3.5-9B-Base), or [Qwen3.5-35B-A3B-Base](https://huggingface.co/Qwen/Qwen3.5-35B-A3B-Base). Supply a compatible SAE for the same model, residual-stream location, and layer.
 
 ## Feature discovery
 
-`src/step2_syco_feature.py` has its own CLI. The supplied `configs/step2.example.yaml` reflects its parser and defaults; it is an illustrative configuration, not a recovered experiment configuration.
+Run feature discovery with `src/step2_syco_feature.py`. Start with `configs/step2.example.yaml` and set the model, SAE, and dataset paths for your environment.
 
 Paired JSONL data uses two rows per prompt, with matching `id`, `domain`, and `prompt`:
 
@@ -48,12 +48,12 @@ SAE files are resolved as `SAE_DIR/layer<LAYER>.ae.pt`. Discovery expects `encod
 
 ## CFI and evaluation
 
-- `src/step4_vaccine.py` implements training-time injection, full tuning, LoRA, distributed training, and model export. Its historical filename is retained; its docstring describes the CFI implementation.
+- `src/step4_vaccine.py` implements training-time injection, full tuning, LoRA, distributed training, and model export.
 - `src/step5_select_alpha.py` selects positive and negative checkpoints independently using sycophancy calibration outcomes, quality gates, and artifact checks.
 - `src/step5_syco_safe_analyse.py` compares paired harmful intents across `direct` and `pressure` conditions. It requires the missing `step1_judge` module listed below.
 - `src/step5_syco_safe_figure.py` plots existing analysis outputs. It does not generate experiment results itself.
 
-The historical shell launchers encode experiment-specific paths, GPU selections, feature IDs, and group names. Inspect their arguments and restore their dependencies before launching them. No training job or judge API call is needed for the lightweight checks below.
+The launch scripts contain experiment-specific paths, GPU selections, feature IDs, and group names. Adjust these settings and install the required dependencies before running them.
 
 ## Lightweight checks
 
@@ -66,11 +66,9 @@ python -m pytest -q \
   -k 'not test_model_entrypoints_enable_post_eval_pruning and not test_35b_entrypoint_uses_all_hosts_and_releases_gpus_before_judging'
 ```
 
-The two excluded tests inspect launchers absent from the archive. The broader suite also references unreleased modules and the GPU/vLLM stack; passing this subset does not certify the complete experiment pipeline.
+The two excluded tests require launchers not included in this repository. Integration tests also require the evaluation modules and GPU environment listed below.
 
-## Release inventory
-
-The source archive contains 53 Python/shell files. Packaging adds documentation, dependency inventories, citation metadata, artwork, an example configuration, and Git ignore rules. The supplied research implementations are preserved.
+## Experiment dependencies
 
 The following referenced components are **not included**:
 
@@ -84,4 +82,4 @@ The following referenced components are **not included**:
 | Launcher dependencies | `run_step4_syco_dataset.sh`, `run_step4_syco_eval.sh`, `run_step4_syco_train_eval_common.sh`, and the `run_step4_syco_train&eval_{2b,9b,35a3b}.sh` wrappers |
 | Research artifacts | Query/response datasets, model and SAE weights, trained checkpoints, evaluation outputs, and the original environment lockfile |
 
-Restore the original components to reproduce the full experiment. In particular, substituting a new judge or pressure protocol changes the experiment and should be reported as a new setup.
+Full reproduction requires these components and the study's original evaluation protocol.

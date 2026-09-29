@@ -38,14 +38,16 @@ These are findings from the accompanying study. This repository provides researc
 
 | Stage | What happens | Start reading |
 | :--- | :--- | :--- |
-| **01 · Discover** | Rank SAE features using paired sycophantic and independent responses. | [Feature discovery](src/step2_syco_feature.py) |
+| **01 · Discover** | Rank SAE features using paired sycophantic and independent responses. | [Discovery](src/step2_syco_feature.py) |
 | **02 · Validate** | Enhance or suppress selected features during inference. | [Steering hooks](src/step3_steering.py) |
-| **03 · Intervene** | Inject the SAE direction during SFT; remove the hook for evaluation. | [CFI training](src/step4_vaccine.py) |
+| **03 · Train** | Inject the SAE direction during SFT; remove the hook for evaluation. | [CFI training](src/step4_vaccine.py) |
 | **04 · Evaluate** | Compare direct and pressured requests at the same harmful intent. | [Paired analysis](src/step5_syco_safe_analyse.py) |
 
 During training, CFI adds a scaled feature direction to selected assistant-token residual states:
 
-$$h_{\ell,t} \leftarrow h_{\ell,t} + \beta\,v_{\mathrm{syc}}.$$
+```math
+h_{\ell,t} \leftarrow h_{\ell,t} + \beta\,v_{\mathrm{syc}}
+```
 
 The implementation includes full-parameter and LoRA training, positive and negative injection, random-feature controls, and response-quality checks. [Checkpoint selection](src/step5_select_alpha.py) uses held-out sycophancy outcomes rather than the downstream safety endpoint; [paired analysis](src/step5_syco_safe_analyse.py) retains refusal/compliance transitions and supports bootstrap estimates clustered by intent.
 
@@ -67,7 +69,7 @@ python -m src.step5_syco_safe_figure --help
 
 For feature extraction and training, use a Linux/CUDA environment with a compatible PyTorch, Transformers, and vLLM stack. [Execution notes](docs/reproduction.md) cover dependencies, the paired-data format, example feature configuration, and lightweight tests.
 
-**Release scope:** the core implementations and historical launch scripts are included. Some pipeline/judge modules and original experiment configurations are absent from this source snapshot. See the [release inventory](docs/reproduction.md#release-inventory) before running a full experiment.
+**Availability:** Some evaluation modules and experiment configurations are not included. See [experiment dependencies](docs/reproduction.md#experiment-dependencies) for the components required to run the full study.
 
 ```text
 src/                  Feature discovery, steering, CFI, analysis, and figures
