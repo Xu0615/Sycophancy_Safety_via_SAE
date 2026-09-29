@@ -81,7 +81,23 @@ docs/                 Execution notes and method artwork
 
 ## Citation & contact
 
-Repository citation metadata is available in [CITATION.cff](CITATION.cff).
+If you use this work, please cite [our paper](https://arxiv.org/abs/2609.35544):
+
+```bibtex
+@misc{wang2026sycophancystrongerrefusallessons,
+  title         = {Less Sycophancy, Stronger Refusal? Lessons for AI Safety from Mechanistic Interpretability},
+  author        = {Xu Wang and Difan Zou and Xuansheng Wu},
+  year          = {2026},
+  eprint        = {2609.35544},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2609.35544},
+}
+```
 
 **Xu Wang:** [sunny615@connect.hku.hk](mailto:sunny615@connect.hku.hk)  
 **\*Corresponding authors:** [Difan Zou](mailto:dzou@hku.hk) · [Xuansheng Wu](mailto:xuanshengwu@pjlab.org.cn)
+
+## Acknowledgments
+
+We thank the Qwen team for releasing [Qwen-Scope](https://huggingface.co/collections/Qwen/qwen-scope) and its sparse autoencoders.

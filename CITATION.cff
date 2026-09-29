@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this research code, please cite this repository."
+message: "If you use this work, please cite the paper below."
 type: software
 title: "Sycophancy and Safety via SAE: Research Code for Less Sycophancy, Stronger Refusal?"
 authors:
@@ -14,6 +14,18 @@ authors:
     affiliation: Shanghai Artificial Intelligence Laboratory
 repository-code: "https://github.com/Xu0615/Sycophancy_Safety_via_SAE"
 url: "https://github.com/Xu0615/Sycophancy_Safety_via_SAE"
+preferred-citation:
+  type: generic
+  title: "Less Sycophancy, Stronger Refusal? Lessons for AI Safety from Mechanistic Interpretability"
+  authors:
+    - family-names: Wang
+      given-names: Xu
+    - family-names: Zou
+      given-names: Difan
+    - family-names: Wu
+      given-names: Xuansheng
+  year: 2026
+  url: "https://arxiv.org/abs/2609.35544"
 abstract: >-
   Research code for SAE feature discovery, inference steering,
   compensatory feature injection during fine-tuning, and paired analysis
